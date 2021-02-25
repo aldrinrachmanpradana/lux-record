@@ -25,10 +25,10 @@ module.exports = {
       red: { ...colors.red, 600: "#E0195D" },
       yellow: colors.amber,
       green: colors.emerald,
-      blue: { ...colors.blue, 200: "#BCE7F0" },
+      blue: { ...colors.blue, 200: "#BCE7F0" }, //warna biru pada tombol play, blue-200 yang diganti artinya jd BCE7F0
       indigo: colors.indigo,
       purple: colors.violet,
-      pink: { ...colors.pink, 400: "#F9CADA" },
+      pink: { ...colors.pink, 400: "#F9CADA" }, //... berfungsing untuk ambers atau merubah fungsi colors.pink
     },
     spacing: {
       px: "1px",
@@ -65,7 +65,7 @@ module.exports = {
       64: "16rem",
       72: "18rem",
       80: "20rem",
-      88: "22rem",
+      88: "22rem", //88 ini custom dari file dari data-content di index (md:w-88)
       96: "24rem",
     },
     animation: {
@@ -173,9 +173,9 @@ module.exports = {
       0: "0",
       DEFAULT: "1",
     },
-    fontFamily: {
+    fontFamily: { //settingan font yang dipake di web ini, sumber : google font
       sans: ["'Open Sans', sans-serif"],
-      serif: [],
+      serif: [], //dikosongin krn ga pake
       mono: [],
     },
     fontSize: {
@@ -487,7 +487,7 @@ module.exports = {
       20: "0.2",
       25: "0.25",
       30: "0.3",
-      35: "0.35",
+      35: "0.35", //35 ini opacity custom dari file di modal.js
       40: "0.4",
       50: "0.5",
       60: "0.6",

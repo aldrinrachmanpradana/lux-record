@@ -9,10 +9,12 @@ for (let index = 0; index < modalTriggers.length; index++) {
     const modalWrapper = document.createElement("div");
     const modalOverlay = document.createElement("div");
 
+    // FUnction ketika di klik dia ke close layar videonya
     modalOverlay.addEventListener("click", function () {
       modalWrapper.remove();
     });
 
+    // Ini untuk posisi layar video setelah di klik
     addClass(
       modalWrapper,
       "fixed inset-0 z-40 flex items-center justify-center w-100 min-h-screen"

@@ -8,18 +8,22 @@
     @apply absolute;
   }
 
-  .overlay * {
+  /* select apapun component setelah overlay di tambahin sebuah transition */
+  .overlay * { 
     @apply transition-all duration-200;
   }
 
+  /* jadi kalau overlay punya kelas hoverable kita mau select atau chart pertama mau apa itu (div, p, dll) bakalan dikasih opacity jadi 0 */
   .overlay.hoverable > * {
     @apply opacity-0;
   }
 
+  /* jika didalamnya ada class hover opacitynya jadi 100 */
   .overlay.hoverable:hover > * {
     @apply opacity-100;
   }
 
+  /* Class : Video , LIngkaran bulat warna biru pada button play video */
   .overlay .video {
     @apply absolute transform bg-blue-200 bg-no-repeat bg-center rounded-full flex items-center justify-center;
     background-image: url("../images/design/icon-play.svg");
@@ -38,59 +42,62 @@
   }
 
   /* card */
+  /* untuk bayangan atau shadow ketika diklik atau kursor diarahkan ke objek */
   .card .card-shadow {
     @apply transition duration-300 shadow-none h-full;
   }
 
+  /* ketika card-shadownya di hover */
   .card:hover .card-shadow {
     @apply shadow-lg;
   }
 
-  /* breadcrumb */
+    /* breadcrumb */
   ul.breadcrumb {
     @apply flex flex-row items-center text-lg;
   }
 
-  ul.breadcrumb li:not(:last-child):after {
-    content: "/";
-    @apply px-4;
+  ul.breadcrumb li:not(:last-child):after { /* li yangbukan last-child (last-child itu urutan terakhir)*/
+    content : '/';
+    @apply px-4; /*jarak antar / dan text */
   }
 
   ul.breadcrumb li:not(:last-child) a {
     @apply font-light;
   }
 
-  ul.breadcrumb li:last-child a {
-    @apply font-semibold;
+  ul.breadcrumb li:last-child a{ /* mencari li yang mana last-childnya memiliki tag a */
+    @apply font-semibold; /* font aktif jadi semi-bold pada breadcrumb yang aktif*/
   }
 
-  /* slider */
-  .slider {
-    @apply flex my-4 flex-col;
+    /* slider */
+  .slider{
+    @apply flex my-4 flex-col; /*buat keadaan saat di mobile */
   }
 
-  .slider .thumbnail {
-    @apply w-screen order-last -mx-2 overflow-auto flex pl-4;
-  }
+  .slider .thumbnail{
+    @apply w-screen order-last -mx-2 overflow-auto flex pl-4;  /* Thumbnail dirubah jadi order last atau kebawah pada mobile */
+  }                                                             /* overflow-auto : bisa membuat slider geser-geser manual*/
 
-  .slider .thumbnail .item {
+  .slider .thumbnail .item { /* ini membuat item kecil di sisi kiri*/
     @apply bg-gray-100 relative rounded-lg mb-4 cursor-pointer;
-    width: 106px;
-    height: 106px;
+    width : 106px;
+    height : 106px;
   }
 
-  .slider .thumbnail .item:after {
-    content: "";
-    @apply transition duration-200 absolute inset-0 bg-black bg-opacity-0 border-2 border-black border-opacity-0 rounded-lg;
+  .slider .thumbnail .item:after { /* ini item ketika di klik*/
+    content :"";
+    @apply transition duration-200 absolute inset-0 bg-black bg-opacity-0 border-2
+    border-black border-opacity-0 rounded-lg;
   }
 
-  .slider .thumbnail .item.selected:after {
+  .slider .thumbnail .item.selected:after { /*ketika item ada class bernama selected*/
     @apply bg-opacity-35 border-opacity-100;
   }
 
-  .slider .preview {
+  .slider .preview{
     @apply mb-4 px-4;
-    height: 320px;
+    height :320px;
   }
 }
 
@@ -104,12 +111,13 @@
     background-size: auto;
   }
 
+  /* slider pada screen medium */
   .slider {
     @apply flex-row;
   }
 
   .slider .thumbnail {
-    @apply w-auto order-first block overflow-visible pl-0;
+    @apply w-auto order-first block overflow-visible pl-0; /** Thumbnail dibalikan lagi jadi order-first **/
   }
 
   .slider .preview {
@@ -119,6 +127,7 @@
 }
 
 @layer utilities {
+  /* ini agar area klik menjangkau keseluruhan gambar */
   .stretched-link {
     @apply absolute inset-0 z-10 cursor-pointer;
   }
@@ -129,11 +138,13 @@
   }
 }
 
+/* jika cart aja */
 a.cart svg g circle.dot {
   @apply hidden;
 }
 
-a.cart.cart-filled svg g circle.dot {
+/* JIka cart-filled */
+a.cart.cart-filled svg g circle.dot { 
   @apply block;
 }
 

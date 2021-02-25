@@ -74,7 +74,7 @@ module.exports = {
 
   plugins: [ //inisiasi plugin
     new MiniCssExtractPlugin({  //minify css
-      filename: "css/[name].minify.css", //konfigurasi filename css
+      filename: "css/app.minify.css", //konfigurasi filename css
     }),
     new ImageMinPlugin({ test: /\.(jpg|jpeg|png|gif|svg)$/i }), //untuk minify image
     new CleanWebpackPlugin({ //ngebersihin hasil sebelumnya
